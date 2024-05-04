@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-y: auto;
+    max-width: 800px;
+    margin: 0;
+    background-color:  #333;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #c4c4c4;
+}
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Customize the checkbox when checked */
+input[type="checkbox"]:checked {
+  background-color: lime; /* Change background color when checked */
+  border-color: lime; /* Change border color when checked */
+}
+
+/* Style the label text */
+label {
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style the checkmark */
+input[type="checkbox"]::before {
+  content: '\2713'; /* Unicode checkmark */
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 20px;
+  text-align: center;
+  color: transparent;
+  font-size: 14px;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Show the checkmark when the checkbox is checked */
+input[type="checkbox"]:checked::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Animate the checkmark */
+input[type="checkbox"]::before {
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Rotate the checkmark */
+input[type="checkbox"]:checked::before {
+  transform: rotate(45deg);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+p, h1, label {
+    margin: 0;
+}
+
+.minecraft {
+    height: 100px;
+    background-image: url("minecraft-top.png");
+    background-repeat: repeat-x;  
+}
+
+.header {
+    background-color: #442d1e;
+    color: green;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.custom-button input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-button {
+    color: #ccc;
+    border: 2px solid #ccc;
+    border-radius: 18px;
+    display: inline-block;
+    padding: 12px;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.custom-button:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.column {
+    float: left;
+    width: 100%;
+    padding: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+    .column {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .column {
+        width: 25%;
+    }
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}

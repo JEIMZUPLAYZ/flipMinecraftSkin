@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<title>Minecraft Flip Skin</title>
+<link rel="icon" href="logo.png" type="image/x-icon">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+<script src="Skin.js"></script>
+<img id="myImageId" src="index.html" onload="flipSkin('myImageId')" style="display: none;">
+<canvas id="myCanvasId" style="display:none;"></canvas>
+<div class="minecraft"></div>
+<div class="header">
+   <h1>Flip Minecraft Skin</h1>
+    </div>
+<p>Created by Bender Playz</p>
+<p>v1</p>
+    <p>Do you want to make Backward skin? Flip your skin in two simple steps:</p>
+    <ol>
+       <li>Note: You Should be on Desktop mode or Desktop Site mode on your Mobile phone</li>
+        <img src="Screenshot_20240504_073316.jpg" style="width:40%; image-rendering: pixelated">
+        <li>Upload the valid 64 pixel.png image of the "wrong" skin. It will be automatically corrected!</li>
+        <li>Download the "corrected" skin.</li>
+    </ol>
+
+<label class="custom-button">
+    <input type="file" accept="image/png" id="picSkinTexture" class="custom-button" onchange="picSkinTextureOnChange(this.value, 'myImageId', 'displayImageId')" onclick="this.value=null"/>
+    Select skin image
+</label>
+<p></p>
+<label><input type="checkbox" id="slimArmsToggle">Slim arms</label>
+
+    <div class="row">
+        <div class="column">
+          <label>Your skin</label>
+          <img id="displayImageId" src="Bender_Playz.png" style="width:100%; image-rendering: pixelated">
+        </div>
+        <div class="column">
+          <label>Flipped skin</label>
+          <img id="resultImageId" src="Bender_Playzflipped.png" style="width:100%; image-rendering: pixelated">
+        </div>
+    </div>
+    
+<div class="resultBlock">
+    <p><a href="benderplaYZ.png" class="custom-button" id="btn-download" download="SubtoBenderPlayzflipped_skin_64x64.png">Download flipped skin</a></p>
+</div>
+<footer>
+    <p>&copy; 2024 bdflipskin. All rights reserved.</p>
+</footer>
+<script>
+    setResultVisible(false);
+    var button = document.getElementById('btn-download');
+    var myCanvas = document.getElementById('myCanvasId');
+    button.addEventListener('click', function (e) {
+        var dataURL = myCanvas.toDataURL('image/png');
+        button.href = dataURL;
+    });
+</script>
+</body>
+</html>
